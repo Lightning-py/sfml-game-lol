@@ -1,1 +1,0 @@
-/usr/bin/c++ -lsfml-graphics -lsfml-window -lsfml-system CMakeFiles/game.dir/main.cpp.o -o game 

@@ -1,3 +1,0 @@
-/home/sergey/projects/others/sfml-game/CMakeFiles/game.dir
-/home/sergey/projects/others/sfml-game/CMakeFiles/edit_cache.dir
-/home/sergey/projects/others/sfml-game/CMakeFiles/rebuild_cache.dir
