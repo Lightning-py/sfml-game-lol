@@ -133,7 +133,6 @@ int main()
 
     while (window.isOpen() && p.ALIVE)
     {
-        std::cout << p.y << std::endl;
         float time = CLOCK.getElapsedTime().asMicroseconds();
         CLOCK.restart();
         time = time / 800;
@@ -144,59 +143,8 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            // if (event.type == sf::Event::KeyPressed)
-            // {
-            //     if (event.key.code == sf::Keyboard::A) // идем налево
-            //     {
-            //         // ----- сдвиг обоин (всегда на 1)
-            //         if (BACKGROUND_SPRITE_2.getPosition().x == 1920) // левая обоина полностью ушла из кадра
-            //         {
-            //             BACKGROUND_SPRITE_1.setPosition(-1919, 0);
-            //             BACKGROUND_SPRITE_2.setPosition(0, 0);
-            //         }
-            //         else
-            //         {
-            //             BACKGROUND_SPRITE_1.move(sf::Vector2f {0.01 * time, 0});
-            //             BACKGROUND_SPRITE_2.move(sf::Vector2f {0.01 * time, 0});
-            //         }
-            //         // -----
-            //     }
-                    
-            //     if (event.key.code == sf::Keyboard::D)
-            //     {
-            //         // ----- сдвиг обоин (всегда на 1)
-            //         if (BACKGROUND_SPRITE_1.getPosition().x == -1920) // левая обоина полностью ушла из кадра
-            //         {
-            //             BACKGROUND_SPRITE_1.setPosition(0, 0);
-            //             BACKGROUND_SPRITE_2.setPosition(1920, 0);
-            //         }
-            //         else
-            //         {
-            //             BACKGROUND_SPRITE_1.move(sf::Vector2f {-0.01 * time, 0});
-            //             BACKGROUND_SPRITE_2.move(sf::Vector2f {-0.01 * time, 0});
-            //         }
-            //         // -----
-            //     }
-            // }
         }
 
- 		// if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		// 	p.dir = 1; 
-        //     p.speed = 0.2;
-		// 	currentframe += 0.01*time;
-		// 	p.sprite = p.Sprites[1][int(currentframe) % p.Sprites[1].size()];
-        //     facing = 1;
-        //     getplayercoordinateforview(p.getplayercoordinateX(), p.getplayercoordinateY());
-		// }
- 
-		// else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-		// 	p.dir = 2;
-        //     p.speed = 0.2;//направление вправо, см выше
-		// 	currentframe += 0.01*time;
-		// 	p.sprite = p.Sprites[2][int(currentframe) % p.Sprites[2].size()];
-        //     facing = 2;
-        //     getplayercoordinateforview(p.getplayercoordinateX(), p.getplayercoordinateY());
-		// }
  
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { 
 			p.dir = 1; 
@@ -238,29 +186,16 @@ int main()
         view.setSize(1920, 1080);
 		window.setView(view);
 
-        // std::cout << p.sprite.getPosition().x << " " << p.sprite.getPosition().y << std::endl;
+         
 
 
 
         window.clear();
         
         
-        // ----- начало отрисовки заднего плана
-
-
-        // отрисовка первого и второго движущихся кусков обоев
-        // window.draw(BACKGROUND_SPRITE_1); 
-        // window.draw(BACKGROUND_SPRITE_2);
-
-        // отрисовка недвижущейся луны
-
-        // ----- конец отрисовка заднего плана
-
         for (int i = 0; i < HEIGHT_MAP; i++)
             for (int j = 0; j < WIDTH_MAP; j++)
             {
-                std::cout << i << " " << j << std::endl;
-                // std::cout << "lol" << std::endl;
                 if (TileMap[i][j] == '0')
                 {
                     s_map.setTextureRect(sf::IntRect(32, 0, 32, 32));
@@ -282,8 +217,6 @@ int main()
     
                     window.draw(s_map);//рисуем квадратики на экран
                 }
-                // if (TileMap[i][j] == 32)   s_map.setTextureRect(sf::IntRect(0, 0, 32, 32));//если встретили символ s, то рисуем 2й квадратик
-                // if ((TileMap[i][j] == 11)) s_map.setTextureRect(sf::IntRect(32, 0, 32, 32));//если встретили символ 0, то рисуем 3й квадратик
     
     
                 
